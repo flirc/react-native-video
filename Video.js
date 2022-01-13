@@ -55,7 +55,7 @@ export default class Video extends Component {
   seek = (time, tolerance = 100) => {
     if (isNaN(time)) {throw new Error('Specified time is not a number');}
 
-    if (Platform.OS === 'ios') {
+    if (Platform.OS === 'ios' || Platform.OS === 'macos') {
       this.setNativeProps({
         seek: {
           time,
